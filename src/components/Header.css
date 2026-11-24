@@ -1,0 +1,125 @@
+.site-header {
+  position: relative;
+  z-index: 40;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Home page: the header sits on top of the hero image. */
+.site-header--overlay {
+  position: absolute;
+  inset: 0 0 auto;
+  background-color: transparent;
+}
+
+.site-header__bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 6.0625rem;
+  padding-block: 2rem 2.25rem;
+  border-bottom: 0.0625rem solid rgb(255 255 255 / 20%);
+}
+
+.site-header__menu-toggle {
+  display: none;
+}
+
+.site-header__logo a {
+  display: block;
+}
+
+.site-header__logo svg {
+  width: 8.9375rem;
+  height: 1.5625rem;
+}
+
+.site-header__cart-toggle {
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.125rem;
+}
+
+.nav-links__link {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.nav-links__link:hover {
+  color: var(--color-primary);
+}
+
+/* Overlay + panels (positioned just under the header) */
+.site-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgb(0 0 0 / 40%);
+}
+
+.site-menu {
+  position: fixed;
+  inset-inline: 0;
+  z-index: 60;
+  max-height: calc(100dvh - 5.625rem);
+  overflow-y: auto;
+  padding-block: 3.5rem 4.1875rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Tablet */
+@media (max-width: 63.9375rem) {
+  .site-header__bar {
+    grid-template-columns: auto auto 1fr;
+    column-gap: 2.625rem;
+    min-height: 5.625rem;
+    padding-block: 2rem;
+    border-bottom-color: rgb(255 255 255 / 10%);
+  }
+
+  .site-header__menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 47.9375rem) {
+  .site-header {
+    border-bottom: 0.0625rem solid rgb(255 255 255 / 10%);
+  }
+
+  .site-header__bar {
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 0;
+    min-height: 5.5625rem;
+    border-bottom: 0;
+  }
+
+  .site-menu {
+    padding-block: 2rem 2.1875rem;
+  }
+}
+
+/* The menu never shows on desktop, even if jQuery left an inline style behind. */
+@media (min-width: 64rem) {
+  .site-menu {
+    display: none !important;
+  }
+}

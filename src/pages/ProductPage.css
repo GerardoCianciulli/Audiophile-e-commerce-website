@@ -1,0 +1,312 @@
+/* ==========================================================================
+   Product detail
+   ========================================================================== */
+.product-detail {
+  display: grid;
+  grid-template-columns: 540fr 445fr;
+  align-items: center;
+  column-gap: 7.8125rem;
+  margin-top: 3.5rem;
+}
+
+.product-detail__image {
+  aspect-ratio: 540 / 560;
+}
+
+.product-detail__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-detail__title {
+  margin-top: 1rem;
+}
+
+.product-detail__content > .product-detail__title:first-child {
+  margin-top: 0;
+}
+
+.product-detail__description {
+  margin-top: 2rem;
+}
+
+.product-detail__price {
+  margin-top: 2rem;
+  letter-spacing: 0.0804rem;
+}
+
+.product-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.9375rem;
+}
+
+/* ==========================================================================
+   Features + In the box
+   ========================================================================== */
+.product-info {
+  display: grid;
+  grid-template-columns: 635fr 350fr;
+  column-gap: 7.8125rem;
+  margin-top: 10rem;
+}
+
+.product-info__text {
+  display: grid;
+  gap: 1.5625rem;
+  margin-top: 2rem;
+}
+
+.product-info__list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.product-info__list li {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.product-info__count {
+  min-width: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+.product-gallery {
+  display: grid;
+  grid-template-columns: 445fr 635fr;
+  grid-template-areas:
+    'first third'
+    'second third';
+  gap: 2rem 1.875rem;
+  margin-top: 10rem;
+}
+
+.product-gallery__first {
+  grid-area: first;
+  aspect-ratio: 445 / 280;
+}
+
+.product-gallery__second {
+  grid-area: second;
+  aspect-ratio: 445 / 280;
+}
+
+.product-gallery__third {
+  grid-area: third;
+}
+
+/* ==========================================================================
+   You may also like
+   ========================================================================== */
+.related {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.related__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem;
+  margin-top: 4rem;
+}
+
+.related__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.related__image {
+  width: 100%;
+  aspect-ratio: 350 / 318;
+}
+
+.related__name {
+  margin-block: 2.5rem 2rem;
+}
+
+/* ==========================================================================
+   Shared sections
+   ========================================================================== */
+.product-page__categories {
+  margin-top: 10rem;
+}
+
+.product-page .best-gear {
+  margin-block: 10rem;
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+@media (max-width: 63.9375rem) {
+  .product-detail {
+    grid-template-columns: 281fr 339fr;
+    column-gap: 4.3125rem;
+    margin-top: 1.5rem;
+  }
+
+  .product-detail__image {
+    aspect-ratio: 281 / 480;
+  }
+
+  .product-detail__overline {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.5357rem;
+  }
+
+  .product-detail__title {
+    margin-top: 1.0625rem;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    letter-spacing: 0.0625rem;
+  }
+
+  .product-detail__actions {
+    margin-top: 1.9375rem;
+  }
+
+  .product-info {
+    grid-template-columns: 1fr;
+    row-gap: 7.5rem;
+    margin-top: 7.5rem;
+  }
+
+  .product-info__box {
+    display: grid;
+    grid-template-columns: 339fr 339fr;
+    column-gap: 0.6875rem;
+    align-items: start;
+  }
+
+  .product-info__list {
+    margin-top: 0;
+  }
+
+  .product-gallery {
+    grid-template-columns: 277fr 395fr;
+    gap: 1.25rem 1.125rem;
+    margin-top: 7.5rem;
+  }
+
+  .product-gallery__first,
+  .product-gallery__second {
+    aspect-ratio: 277 / 174;
+  }
+
+  .related {
+    margin-top: 7.5rem;
+  }
+
+  .related__list {
+    gap: 0.6875rem;
+    margin-top: 3.5rem;
+  }
+
+  .related__image {
+    aspect-ratio: 223 / 318;
+  }
+
+  .product-page__categories {
+    margin-top: 7.5rem;
+  }
+
+  .product-page .best-gear {
+    margin-block: 7.5rem;
+  }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+@media (max-width: 47.9375rem) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .product-detail__image {
+    aspect-ratio: 1;
+  }
+
+  .product-detail__overline {
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    letter-spacing: 0.625rem;
+  }
+
+  .product-detail__title {
+    margin-top: 1.5rem;
+    line-height: 2.375rem;
+  }
+
+  .product-detail__description,
+  .product-detail__price {
+    margin-top: 1.5rem;
+  }
+
+  .product-info {
+    row-gap: 5.5rem;
+    margin-top: 5.5rem;
+  }
+
+  .product-info .heading-3,
+  .related__title {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.0536rem;
+  }
+
+  .product-info__text {
+    margin-top: 1.5rem;
+  }
+
+  .product-info__box {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info__list {
+    margin-top: 1.5rem;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'first'
+      'second'
+      'third';
+    margin-top: 5.5rem;
+  }
+
+  .product-gallery__first,
+  .product-gallery__second {
+    aspect-ratio: 327 / 174;
+  }
+
+  .product-gallery__third {
+    aspect-ratio: 327 / 368;
+  }
+
+  .related__list {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .related__image {
+    aspect-ratio: 327 / 120;
+  }
+
+  .related__name {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,151 @@
+.site-footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.site-footer__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'logo nav'
+    'about social'
+    'copyright .';
+  padding-block: 4.6875rem 3rem;
+}
+
+/* Orange accent bar at the top-left of the content */
+.site-footer__inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6.3125rem;
+  height: 0.25rem;
+  background-color: var(--color-primary);
+}
+
+.site-footer__logo {
+  grid-area: logo;
+  align-self: center;
+}
+
+.site-footer__logo svg {
+  width: 8.9375rem;
+  height: 1.5625rem;
+}
+
+.site-footer__nav {
+  grid-area: nav;
+}
+
+.site-footer__about {
+  grid-area: about;
+  max-width: 33.75rem;
+  margin-top: 2.25rem;
+  color: rgb(255 255 255 / 50%);
+}
+
+.site-footer__copyright {
+  grid-area: copyright;
+  margin-top: 3.5rem;
+  font-weight: 700;
+  color: rgb(255 255 255 / 50%);
+}
+
+.site-footer__social {
+  grid-area: social;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+  /* On desktop the icons line up with the last line of the description */
+  align-self: end;
+  margin-bottom: 0.4375rem;
+}
+
+.site-footer__social a {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Tablet */
+@media (max-width: 63.9375rem) {
+  .site-footer__inner {
+    grid-template-areas:
+      'logo logo'
+      'nav nav'
+      'about about'
+      'copyright social';
+    padding-block: 3.75rem 2.875rem;
+  }
+
+  .site-footer__logo {
+    justify-self: start;
+  }
+
+  .site-footer__nav {
+    margin-top: 2rem;
+  }
+
+  .site-footer__about {
+    max-width: none;
+    margin-top: 2rem;
+  }
+
+  .site-footer__copyright {
+    margin-top: 5rem;
+  }
+
+  .site-footer__social {
+    align-self: center;
+    margin: 5rem 0 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 47.9375rem) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'logo'
+      'nav'
+      'about'
+      'copyright'
+      'social';
+    justify-items: center;
+    padding-block: 3.25rem 2.375rem;
+    text-align: center;
+  }
+
+  .site-footer__inner::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .site-footer__logo {
+    justify-self: center;
+  }
+
+  .site-footer__nav {
+    margin-top: 3rem;
+  }
+
+  .site-footer__nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .site-footer__about,
+  .site-footer__copyright,
+  .site-footer__social {
+    margin-top: 3rem;
+  }
+
+  .site-footer__social {
+    justify-self: center;
+  }
+}

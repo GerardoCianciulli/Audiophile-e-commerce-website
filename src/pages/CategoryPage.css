@@ -1,0 +1,141 @@
+.category-page__banner {
+  display: grid;
+  place-items: center;
+  min-height: 14.9375rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.category-page__products {
+  display: grid;
+  gap: 10rem;
+  margin-top: 10rem;
+}
+
+.category-page__categories {
+  margin-top: 10rem;
+}
+
+.category-page .best-gear {
+  margin-block: 10rem;
+}
+
+/* Product preview: image + text, alternating sides on desktop */
+.product-preview {
+  display: grid;
+  grid-template-columns: 540fr 445fr;
+  grid-template-areas: 'image content';
+  align-items: center;
+  column-gap: 7.8125rem;
+}
+
+.product-preview--reverse {
+  grid-template-columns: 445fr 540fr;
+  grid-template-areas: 'content image';
+}
+
+.product-preview__image {
+  grid-area: image;
+  aspect-ratio: 540 / 560;
+}
+
+.product-preview__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-preview__title {
+  margin-top: 1rem;
+}
+
+.product-preview__content > .product-preview__title:first-child {
+  margin-top: 0;
+}
+
+.product-preview__text {
+  margin-block: 2rem 2.5rem;
+}
+
+/* Tablet */
+@media (max-width: 63.9375rem) {
+  .category-page__banner {
+    min-height: 15.375rem;
+  }
+
+  .category-page__products {
+    gap: 7.5rem;
+    margin-top: 7.5rem;
+  }
+
+  .category-page__categories {
+    margin-top: 7.5rem;
+  }
+
+  .category-page .best-gear {
+    margin-block: 7.5rem;
+  }
+
+  .product-preview,
+  .product-preview--reverse {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'content';
+    row-gap: 3.25rem;
+  }
+
+  .product-preview__image {
+    aspect-ratio: 689 / 352;
+  }
+
+  .product-preview__content {
+    align-items: center;
+    max-width: 35.75rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .product-preview__text {
+    margin-block: 2rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 47.9375rem) {
+  .category-page__banner {
+    min-height: 6.375rem;
+  }
+
+  .category-page__banner .heading-2 {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    letter-spacing: 0.125rem;
+  }
+
+  .category-page__products {
+    margin-top: 4rem;
+  }
+
+  .product-preview,
+  .product-preview--reverse {
+    row-gap: 2rem;
+  }
+
+  .product-preview__image {
+    aspect-ratio: 327 / 352;
+  }
+
+  .product-preview__title {
+    margin-top: 1.5rem;
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    letter-spacing: 0.0625rem;
+  }
+
+  .product-preview__text {
+    margin-block: 1.5rem;
+  }
+}

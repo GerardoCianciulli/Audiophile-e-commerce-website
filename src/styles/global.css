@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Design tokens (from the Figma "Design System" frame). 1rem = 16px.
+   Breakpoints: desktop >= 64rem, tablet 48rem–63.9375rem, mobile <= 47.9375rem.
+   ========================================================================== */
+:root {
+  --color-primary: #d87d4a;
+  --color-primary-light: #fbaf85;
+  --color-black: #000000;
+  --color-dark: #101010;
+  --color-dark-hover: #4c4c4c;
+  --color-hero: #191919;
+  --color-grey: #f1f1f1;
+  --color-light: #fafafa;
+  --color-white: #ffffff;
+  --color-border: #cfcfcf;
+  --color-error: #cd2c2c;
+  --color-text-muted: rgb(0 0 0 / 50%);
+  --color-text-on-dark: rgb(255 255 255 / 75%);
+
+  --font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 0.5rem;
+
+  --container: 69.375rem;
+  --gutter: 2.5rem;
+  --transition: 0.2s ease;
+}
+
+@media (max-width: 47.9375rem) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  color: var(--color-black);
+  background-color: var(--color-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.is-scroll-locked {
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+output {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+fieldset {
+  border: 0;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Layout helpers
+   ========================================================================== */
+.container {
+  width: min(var(--container), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.rounded-image {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: var(--color-grey);
+}
+
+.rounded-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Typography (Manrope; sizes, line heights and letter spacing from the design system)
+   ========================================================================== */
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heading-1 {
+  font-size: 3.5rem;
+  line-height: 3.625rem;
+  letter-spacing: 0.125rem;
+}
+
+.heading-2 {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  letter-spacing: 0.09375rem;
+}
+
+.heading-3 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.0714rem;
+}
+
+.heading-4 {
+  font-size: 1.75rem;
+  line-height: 2.375rem;
+  letter-spacing: 0.125rem;
+}
+
+.heading-5 {
+  font-size: 1.5rem;
+  line-height: 2.0625rem;
+  letter-spacing: 0.1071rem;
+}
+
+.heading-6 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0804rem;
+}
+
+.overline {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1875rem;
+  letter-spacing: 0.625rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  letter-spacing: 0.058rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.body-text {
+  color: var(--color-text-muted);
+}
+
+.text-accent {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Buttons (Button 1 = primary, Button 2 = secondary, plus the black ZX9 button)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: 0.0625rem solid transparent;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn--secondary {
+  border-color: var(--color-black);
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--dark:hover {
+  background-color: var(--color-dark-hover);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary:disabled:hover {
+  background-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Page states
+   ========================================================================== */
+.page-status {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding-block: 10rem 0;
+  text-align: center;
+}

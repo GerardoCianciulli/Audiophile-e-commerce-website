@@ -1,0 +1,56 @@
+.best-gear {
+  display: grid;
+  grid-template-columns: 445fr 540fr;
+  grid-template-areas: 'content image';
+  align-items: center;
+  column-gap: 7.8125rem;
+}
+
+.best-gear__image {
+  grid-area: image;
+  aspect-ratio: 540 / 588;
+}
+
+.best-gear__content {
+  grid-area: content;
+  display: grid;
+  gap: 2rem;
+}
+
+/* Tablet */
+@media (max-width: 63.9375rem) {
+  .best-gear {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'content';
+    row-gap: 3.9375rem;
+    text-align: center;
+  }
+
+  .best-gear__image {
+    aspect-ratio: 689 / 300;
+  }
+
+  .best-gear__content {
+    max-width: 35.8125rem;
+    margin-inline: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 47.9375rem) {
+  .best-gear {
+    row-gap: 2.5rem;
+  }
+
+  .best-gear__image {
+    aspect-ratio: 327 / 300;
+  }
+
+  .best-gear__content .heading-2 {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    letter-spacing: 0.0625rem;
+  }
+}
