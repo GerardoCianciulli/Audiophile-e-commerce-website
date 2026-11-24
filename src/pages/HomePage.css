@@ -90,6 +90,11 @@
   height: 59rem;
 }
 
+/* The rings keep their 1px Figma stroke at every size. */
+.feature-zx9__pattern circle {
+  vector-effect: non-scaling-stroke;
+}
+
 .feature-zx9__image {
   position: absolute;
   top: 6rem;
@@ -288,10 +293,13 @@
     padding: 3.4375rem 1.4375rem 3.4375rem;
   }
 
+  /* Figma (Mobile - Home): 558 x 558 at x -116, y -121 on the 327px card, centred on the speaker */
   .feature-zx9__pattern {
     top: -7.5625rem;
+    left: calc(50% - 17.4375rem);
     width: 34.875rem;
     height: 34.875rem;
+    transform: none;
   }
 
   .feature-zx9__image {

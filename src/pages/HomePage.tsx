@@ -41,7 +41,8 @@ export function HomePage() {
 
       <section className="container home__featured" aria-label="Featured products">
         <article className="feature-zx9">
-          <PatternCircles className="feature-zx9__pattern" aria-hidden="true" />
+          {/* The SVG file has no viewBox; without one it can't scale down to the 558px mobile size. */}
+          <PatternCircles className="feature-zx9__pattern" viewBox="0 0 944 944" aria-hidden="true" />
           <ResponsivePicture className="feature-zx9__image" image={homeImage('image-speaker-zx9', 'png')} alt="ZX9 speaker" />
           <div className="feature-zx9__content">
             <h3 className="heading-1 feature-zx9__title">
